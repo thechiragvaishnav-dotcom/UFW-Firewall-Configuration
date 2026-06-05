@@ -67,30 +67,25 @@ To enable the OpenSSH application profile, run:\
 ![](images/image9.png)\
 This will create firewall rules to allow all connections on port 22, which is the port that the SSH daemon listens on by default.
 
-- Allowing SSH by Service Name
-
-Another way to configure UFW to allow incoming SSH connections is by referencing its service name: <code>ssh</code>.
-- <code>sudo ufw allow ssh</code>
-
-  ![](images/image10.png)
-
+2. Allowing SSH by Service Name\
+Another way to configure UFW to allow incoming SSH connections is by referencing its service name: <code>ssh</code>.\
+<code>sudo ufw allow ssh</code>\
+\
+![](images/image10.png)\
 UFW knows which ports and protocols a service uses based on the <code>/etc/services</code> file.
 
-- Allowing SSH by Port Number
-
-Alternatively, you can write the equivalent rule by specifying the port instead of the application profile or service name. For example, this command works the same as the previous examples:
-- <code>sudo ufw allow 22</code>
-
-  ![](images/image11.png)
-
-If you configured your SSH daemon to use a different port, you will have to specify the appropriate port. For example, if your SSH server is listening on port <code>2222</code>, you can use this command to allow connections on that port:
-- <code>sudo ufw allow 2222</code>
-
-  ![](images/image12.png)
-
+3. Allowing SSH by Port Number\
+Alternatively, you can write the equivalent rule by specifying the port instead of the application profile or service name. For example, this command works the same as the previous examples:\
+<code>sudo ufw allow 22</code>\
+\
+![](images/image11.png)\
+If you configured your SSH daemon to use a different port, you will have to specify the appropriate port. For example, if your SSH server is listening on port <code>2222</code>, you can use this command to allow connections on that port:\
+<code>sudo ufw allow 2222</code>\
+\
+![](images/image12.png)\
 Now that your firewall is configured to allow incoming SSH connections, you can enable it.
 
-- Rate Limiting
+### Rate Limiting
 
 To protect services like SSH from automated brute-force attacks, UFW includes a rate-limiting feature. When you apply a rate limit to a service, UFW tracks the frequency of connection attempts from each source IP address. If an IP address makes too many connections in a short period, UFW will temporarily block it. This is a more intelligent approach than simply allowing or denying traffic, as it distinguishes between normal use and behavior that is likely malicious.
 
