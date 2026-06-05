@@ -37,3 +37,10 @@ To set the default UFW incoming policy to <code>deny</code>, run:
 - <code>sudo ufw default deny incoming</code>
 
   ![](images/image6.png)
+
+To set the default UFW outgoing policy to allow, run:
+- <code>sudo ufw default allow outgoing</code>
+
+  ![](images/image7.png)
+  These commands set the defaults to deny incoming and allow outgoing connections. These firewall defaults alone might suffice for a personal computer, but servers typically
+  need to respond to incoming requests from outside users. We’ll look into that next.
