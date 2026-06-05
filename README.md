@@ -17,7 +17,7 @@
 
 ## Step 1 — Making Sure IPv6 is Enabled
 In recent versions of Ubuntu, IPv6 is enabled by default. In practice that means most firewall rules added to the server will include both an IPv4 and an IPv6 version, the latter identified by <code>v6</code> within the output of UFW’s status command. To make sure IPv6 is enabled, you can check your UFW configuration file at <code>/etc/default/ufw</code>. Open this file using <code>nano</code> or your favorite command line editor:
-- <code>sudo nano /etc/default/ufw</code>
+- <code>sudo nano /etc/default/ufw</code> and press <code>Enter</code>
 
   ![](images/image4.png)
 - Then make sure the value of <code>IPV6</code> is set to <code>yes</code>. It should look like this:
