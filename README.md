@@ -59,9 +59,11 @@ If you were to enable your UFW firewall now, it would deny all incoming connecti
 1. Allowing the OpenSSH UFW Application Profile\
 Upon installation, most applications that rely on network connections will register an application profile within UFW, which enables users to quickly allow or deny external  access to a service. You can check which profiles are currently registered in UFW with:\
 <code>sudo ufw app list</code>\
+\
 ![](images/image8.png)\
 To enable the OpenSSH application profile, run:\
 <code>sudo ufw allow OpenSSH</code>\
+\
 ![](images/image9.png)\
 This will create firewall rules to allow all connections on port 22, which is the port that the SSH daemon listens on by default.
 
