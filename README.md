@@ -5,3 +5,7 @@
   - <code>sudo ufw status</code>
 
   ![](images/image2.png)
+- If you see command not found
+  - <code>sudo apt install ufw</code>
+
+  ![](images/image3.png)
