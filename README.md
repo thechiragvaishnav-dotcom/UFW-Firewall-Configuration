@@ -48,7 +48,7 @@ To set the default UFW outgoing policy to allow, run:
 
   ![](images/image7.png)
 
-- These commands set the defaults to deny incoming and allow outgoing connections. These firewall defaults alone might suffice for a personal computer, but servers typically
+These commands set the defaults to deny incoming and allow outgoing connections. These firewall defaults alone might suffice for a personal computer, but servers typically
 need to respond to incoming requests from outside users. We’ll look into that next.
 
 ## [Back to Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#content)
@@ -56,18 +56,13 @@ need to respond to incoming requests from outside users. We’ll look into that 
 ## Step 3 — Allowing SSH Connections
 If you were to enable your UFW firewall now, it would deny all incoming connections. This means that you’ll need to create rules that explicitly allow legitimate incoming connections — SSH or HTTP connections, for example — if you want your server to respond to those types of requests. If you’re using a cloud server, you will probably want to allow incoming SSH connections so you can connect to and manage your server.
 
-- Allowing the OpenSSH UFW Application Profile
-
-Upon installation, most applications that rely on network connections will register an application profile within UFW, which enables users to quickly allow or deny external access to a service. You can check which profiles are currently registered in UFW with:
-- <code>sudo ufw app list</code>
-
-  ![](images/image8.png)
-  
-To enable the OpenSSH application profile, run:
-- <code>sudo ufw allow OpenSSH</code>
-
-  ![](images/image9.png)
-
+1. Allowing the OpenSSH UFW Application Profile\
+Upon installation, most applications that rely on network connections will register an application profile within UFW, which enables users to quickly allow or deny external  access to a service. You can check which profiles are currently registered in UFW with:\
+<code>sudo ufw app list</code>\
+![](images/image8.png)\
+To enable the OpenSSH application profile, run:\
+<code>sudo ufw allow OpenSSH</code>\
+![](images/image9.png)\
 This will create firewall rules to allow all connections on port 22, which is the port that the SSH daemon listens on by default.
 
 - Allowing SSH by Service Name
