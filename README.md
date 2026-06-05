@@ -26,6 +26,8 @@ In recent versions of Ubuntu, IPv6 is enabled by default. In practice that means
   - Save and close the file. If you’re using <code>nano</code>, you can do that by typing <code>CTRL+X</code>, then <code>Y</code> and <code>ENTER</code> to confirm.
   - When UFW is enabled in a later step of this guide, it will be configured to write both IPv4 and IPv6 firewall rules.
 
+## [Back to Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#content)
+
 ## Step 2 — Setting Up Default Policies
 If you’re just getting started with UFW, a good first step is to check your default firewall policies. These rules control how to handle traffic that does not explicitly match any other rules.
 
@@ -38,6 +40,9 @@ To set the default UFW incoming policy to <code>deny</code>, run:
 
   ![](images/image6.png)
 
+## [Back to Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#content)
+
+## 
 To set the default UFW outgoing policy to allow, run:
 - <code>sudo ufw default allow outgoing</code>
 
