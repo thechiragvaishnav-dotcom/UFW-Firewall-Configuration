@@ -21,3 +21,6 @@ In recent versions of Ubuntu, IPv6 is enabled by default. In practice that means
 - Then make sure the value of <code>IPV6</code> is set to <code>yes</code>. It should look like this:
 
   ![](images/image5.png)
+  Save and close the file. If you’re using nano, you can do that by typing CTRL+X, then Y and ENTER to confirm.
+
+  When UFW is enabled in a later step of this guide, it will be configured to write both IPv4 and IPv6 firewall rules.
