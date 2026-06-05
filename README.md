@@ -18,3 +18,6 @@ In recent versions of Ubuntu, IPv6 is enabled by default. In practice that means
 - <code>sudo nano /etc/default/ufw</code>
 
   ![](images/image4.png)
+- Then make sure the value of <code>IPV6</code> is set to <code>yes</code>. It should look like this:
+
+  ![](images/image5.png)
