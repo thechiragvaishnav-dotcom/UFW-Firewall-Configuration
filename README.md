@@ -1,5 +1,5 @@
 # UFW-Firewall-Configuration
-- if UFW already installed jump to [Content]([https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/edit/main/README.md#content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/edit/main/README.md#content)
+- if UFW already installed jump to [Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/edit/main/README.md#content)
 - open your linux terminal
   ![](images/image1.png)
 - Check whether UFW is already install or not
