@@ -99,3 +99,25 @@ This single command creates a rule that allows SSH connections, but with a condi
 ## [Back to Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#content)
 
 ## Step 4 — Enabling UFW
+Your firewall should now be configured to allow SSH connections. To verify which rules were added so far, even when the firewall is still disabled, you can use:
+- <code>sudo ufw show added</code>
+
+  ![](images/image14.png)
+
+After confirming that you have a rule to allow incoming SSH connections, you can enable the firewall with:
+- <code>sudo ufw enable</code>
+
+  ![](images/image15.png)
+
+You will receive a warning that says the command may disrupt existing SSH connections. You already set up a firewall rule that allows SSH connections, so it should be fine to continue. Respond to the prompt with <code>y</code> and hit <code>ENTER</code>.
+
+The firewall is now active. Run the command to see the rules that are set.
+- <code>sudo ufw status verbose</code>
+
+  ![](images/image16.png)
+
+The rest of this tutorial covers how to use UFW in more detail, like allowing or denying different kinds of connections.
+
+## [Back to Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#content)
+
+## Step 5 — Allowing Other Connections
