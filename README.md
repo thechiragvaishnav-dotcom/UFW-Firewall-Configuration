@@ -103,6 +103,7 @@ Your firewall should now be configured to allow SSH connections. To verify which
 - <code>sudo ufw show added</code>
 
   ![](images/image14.png)
+  - [what's the difference between this four RULES ?]()
 
 After confirming that you have a rule to allow incoming SSH connections, you can enable the firewall with:
 - <code>sudo ufw enable</code>
