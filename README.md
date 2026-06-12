@@ -387,11 +387,11 @@ This approach can prevent a compromised server from communicating with an attack
    - <code># Allow DNS queries
 sudo ufw allow out 53
 
-# Allow access to package repositories and web APIs
+         # Allow access to package repositories and web APIs
 sudo ufw allow out to any port 80 proto tcp
 sudo ufw allow out to any port 443 proto tcp
 
-# Allow NTP for time synchronization
+    # Allow NTP for time synchronization
 sudo ufw allow out 123/udp</code>
 
 You must tailor these rules to the specific needs of your server’s applications.
