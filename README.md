@@ -270,9 +270,9 @@ When deleting UFW rules by name, both IPv4 and IPv6 rules are deleted if they ex
 ## Step 8 — Checking UFW Status and Rules
 At any time, you can check the status of UFW with this command:
 - <code>sudo ufw status verbose</code>
-  - If UFW is disabled, which it is by default, you’ll see something like this:
+  - If UFW is disabled, which it is by default, you’ll see something like this:\
     ![](images/image34.png)
-  - If UFW is active, which it should be if you followed Step 3, the output will say that it’s active and it will list any rules that are set. For example, if the firewall is set to allow SSH (port <code>22</code>) connections from anywhere, the output might look something like this:
+  - If UFW is active, which it should be if you followed Step 3, the output will say that it’s active and it will list any rules that are set. For example, if the firewall is set to allow SSH (port <code>22</code>) connections from anywhere, the output might look something like this:\
     ![](images/image35.png)
 
 Use the <code>status</code> command if you want to check how UFW has configured the firewall.
