@@ -201,3 +201,29 @@ This would allow other servers on your private network to connect to your MySQL 
 ## [Back to Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#content)
 
 ## Step 6 — Denying Connections
+If you haven’t changed the default policy for incoming connections, UFW is configured to deny all incoming connections. Generally, this simplifies the process of creating a secure firewall policy by requiring you to create rules that explicitly allow specific ports and IP addresses through.
+
+However, sometimes you will want to deny specific connections based on the source IP address or subnet, perhaps because you know that your server is being attacked from there. Also, if you want to change your default incoming policy to **allow** (which is not recommended), you would need to create **deny** rules for any services or IP addresses that you don’t want to allow connections for.
+
+To write deny rules, you can use the commands previously described, replacing **allow** with **deny**.
+
+For example, to deny HTTP connections, you could use this command:
+- <code>sudo ufw deny http</code>
+
+  ![](images/image26.png)
+
+Or if you want to deny all connections from <code>203.0.113.4</code> you could use this command:
+- <code>sudo ufw deny from 203.0.113.4</code>
+
+  ![](images/image27.png)
+
+In some cases, you may also want to block outgoing connections from the server. To deny all users from using a port on the server, such as port <code>25</code> for SMTP traffic, you can use <code>deny out</code> followed by the port number:
+- <code>sudo ufw deny out 25</code>
+
+  ![](images/image28.png)
+
+This will block all outgoing SMTP traffic on the server.
+
+## [Back to Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#content)
+
+## Step 7 — Deleting Rules
