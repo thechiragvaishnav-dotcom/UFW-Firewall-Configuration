@@ -20,6 +20,7 @@
 - [Step 6 — Denying Connections](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#step-6--denying-connections)
 - [Step 7 — Deleting Rules](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#step-7--deleting-rules)
 - [Step 8 — Checking UFW Status and Rules](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#step-8--checking-ufw-status-and-rules)
+- [Step 9 — Disable or Reset Firewall](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#step-9--disable-or-reset-firewall)
 
 ## Step 1 — Making Sure IPv6 is Enabled
 In recent versions of Ubuntu, IPv6 is enabled by default. In practice that means most firewall rules added to the server will include both an IPv4 and an IPv6 version, the latter identified by <code>v6</code> within the output of UFW’s status command. To make sure IPv6 is enabled, you can check your UFW configuration file at <code>/etc/default/ufw</code>. Open this file using <code>nano</code> or your favorite command line editor:
@@ -280,3 +281,22 @@ Use the <code>status</code> command if you want to check how UFW has configured 
 ## [Back to Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#content)
 
 ## Step 9 — Disable or Reset Firewall
+If you decide you don’t want to use the UFW firewall, you can deactivate it with this command:
+- <code>sudo ufw disable</code>
+
+  ![](images/image36.png)
+
+Any rules that you created with UFW will no longer be active. You can always run <code>sudo ufw enable</code> if you need to activate it later.
+
+If you already have UFW rules configured but you decide that you want to start over, you can use the <code>reset</code> command:
+- <code>sudo ufw reset</code>
+
+  ![](images/image37.png)
+
+This will disable UFW and delete any rules that were previously defined. This should give you a fresh start with UFW. Keep in mind that the default policies will remain as last set; you may need to reset them manually.
+
+> Deploy your frontend applications from GitHub using [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform). Let DigitalOcean focus on scaling your app.
+
+## [Back to Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#content)
+
+## Security Best Practices for Firewall Management
