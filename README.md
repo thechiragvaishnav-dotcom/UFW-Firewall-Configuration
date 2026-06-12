@@ -19,6 +19,7 @@
 - [Step 5 — Allowing Other Connections](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#step-5--allowing-other-connections)
 - [Step 6 — Denying Connections](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#step-6--denying-connections)
 - [Step 7 — Deleting Rules](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#step-7--deleting-rules)
+- [Step 8 — Checking UFW Status and Rules](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#step-8--checking-ufw-status-and-rules)
 
 ## Step 1 — Making Sure IPv6 is Enabled
 In recent versions of Ubuntu, IPv6 is enabled by default. In practice that means most firewall rules added to the server will include both an IPv4 and an IPv6 version, the latter identified by <code>v6</code> within the output of UFW’s status command. To make sure IPv6 is enabled, you can check your UFW configuration file at <code>/etc/default/ufw</code>. Open this file using <code>nano</code> or your favorite command line editor:
@@ -267,3 +268,15 @@ When deleting UFW rules by name, both IPv4 and IPv6 rules are deleted if they ex
 ## [Back to Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#content)
 
 ## Step 8 — Checking UFW Status and Rules
+At any time, you can check the status of UFW with this command:
+- <code>sudo ufw status verbose</code>
+  - If UFW is disabled, which it is by default, you’ll see something like this:
+    ![](images/image34.png)
+  - If UFW is active, which it should be if you followed Step 3, the output will say that it’s active and it will list any rules that are set. For example, if the firewall is set to allow SSH (port <code>22</code>) connections from anywhere, the output might look something like this:
+    ![](images/image35.png)
+
+Use the <code>status</code> command if you want to check how UFW has configured the firewall.
+
+## [Back to Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#content)
+
+## Step 9 — Disable or Reset Firewall
