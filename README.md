@@ -384,15 +384,21 @@ This approach can prevent a compromised server from communicating with an attack
 
      ![](images/image44.png)
 2. **Allow Essential Outgoing Connections:** You must then explicitly allow traffic for services the server depends on.
-   - <code># Allow DNS queries
-sudo ufw allow out 53
+   - Allow DNS queries
+     - <code>sudo ufw allow out 53</code>
 
-         # Allow access to package repositories and web APIs
-sudo ufw allow out to any port 80 proto tcp
-sudo ufw allow out to any port 443 proto tcp
+       ![](images/image45.png)
 
-    # Allow NTP for time synchronization
-sudo ufw allow out 123/udp</code>
+  - Allow access to package repositories and web APIs
+    - <code>sudo ufw allow out to any port 80 proto tcp
+sudo ufw allow out to any port 443 proto tcp</code>
+
+
+      ![](images/image46.png)
+  - Allow NTP for time synchronization
+    - <code>sudo ufw allow out 123/udp</code>
+
+      ![](images/image47.png)
 
 You must tailor these rules to the specific needs of your server’s applications.
 
@@ -404,7 +410,7 @@ Applying an incorrect firewall rule can cause a service outage or lock you out o
 - **Perform a Dry Run:** UFW has a <code>--dry-run</code> option that shows you what changes would be made without actually applying them. This is a safe way to check for syntax errors and see how your command will alter the ruleset.
   - <code>sudo ufw --dry-run enable</code>
 
-    ![](images/image45.png)
+    ![](images/image48.png)
 - **Verify with an External Port Scan:** After applying your rules, use a tool like <code>nmap</code> from an external machine to confirm the server’s state. This check verifies that ports you intend to be open are accessible and ports you intend to be closed are not.
   - <code># This command checks the state of ports 22, 80, and 443 from an external machine
 nmap -p 22,80,443 your_server_ip</code>
