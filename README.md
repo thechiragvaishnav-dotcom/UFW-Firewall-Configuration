@@ -412,7 +412,7 @@ Applying an incorrect firewall rule can cause a service outage or lock you out o
 
     ![](images/image48.png)
 - **Verify with an External Port Scan:** After applying your rules, use a tool like <code>nmap</code> from an external machine to confirm the server’s state. This check verifies that ports you intend to be open are accessible and ports you intend to be closed are not.
-  - <code># This command checks the state of ports 22, 80, and 443 from an external machine
-nmap -p 22,80,443 your_server_ip</code>
+  - This command checks the state of ports 22, 80, and 443 from an external machine
+    - <code>nmap -p 22,80,443 your_server_ip</code>
 
 The output should show <code>open</code> for allowed ports and <code>closed</code> or <code>filtered</code> for blocked ports, matching your expectations.
