@@ -229,3 +229,41 @@ This will block all outgoing SMTP traffic on the server.
 ## [Back to Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#content)
 
 ## Step 7 — Deleting Rules
+Knowing how to delete firewall rules is just as important as knowing how to create them. There are two different ways to specify which rules to delete: by rule number or by its human-readable denomination (similar to how the rules were specified when they were created).
+
+### Deleting a UFW Rule By Number
+To delete a UFW rule by its number, first you’ll want to obtain a numbered list of all your firewall rules. The UFW status command has an option to display numbers next to each rule, as demonstrated here:
+- <code>sudo ufw status numbered</code>
+
+  ![](images/image29.png)
+
+If you decide that you want to delete rule number 2, the one that allows port 80 (HTTP) connections, you can specify it in a UFW delete command like this:
+- <code>sudo ufw delete 2</code>
+
+  ![](images/image30.png)
+
+This will prompt for a confirmation then delete rule 2, which allows HTTP connections.
+
+> **Important:** Using <code>ufw status numbered</code> lists IPv4 and IPv6 rules separately. Deleting a rule by its number will only remove that single entry. You must identify and delete the corresponding (<code>v6</code>) rule separately. In contrast, deleting a rule by name (e.g., <code>sudo ufw delete allow http</code>) removes both IPv4 and IPv6 rules automatically.
+
+### Deleting a UFW Rule By Name
+Instead of using rule numbers, you may also refer to a rule by its human-readable denomination, which is based on the type of rule (typically <code>allow</code> or <code>deny</code>) and the service name or port number that was the target for this rule, or the application profile name in case that was used. For example, if you want to delete an <code>allow</code> rule for an application profile called <code>Apache Full</code> that was previously enabled, you can use:
+- <code>sudo ufw delete allow "Apache Full"</code>
+
+  ![](images/image31.png)
+
+The <code>delete</code> command works the same way for rules that were created referencing a service by its name or port. For example, if you previously set a rule to allow HTTP connections with <code>sudo ufw allow http</code>, this is how you could delete said rule:
+- <code>sudo ufw delete allow http</code>
+
+  ![](images/image32.png)
+
+Because service names are interchangeable with port numbers when specifying rules, you could also refer to the same rule as <code>allow 80</code>, instead of <code>allow http</code>:
+- <code>sudo ufw delete allow 80</code>
+
+  ![](images/image33.png)
+
+When deleting UFW rules by name, both IPv4 and IPv6 rules are deleted if they exist.
+
+## [Back to Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#content)
+
+## Step 8 — Checking UFW Status and Rules
