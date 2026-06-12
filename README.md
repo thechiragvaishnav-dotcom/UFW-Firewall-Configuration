@@ -165,10 +165,12 @@ You can also specify a port that the IP address is allowed to connect to by addi
 If you want to allow a subnet of IP addresses, you can do so using [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#:~:text=CIDR%20notation%20is%20a%20compact,bits%20in%20the%20network%20mask.) to specify a netmask. For example, if you want to allow all of the IP addresses ranging from <code>203.0.113.1</code> to <code>203.0.113.254</code> you could use this command:
 - <code>sudo ufw allow from 203.0.113.0/24</code>
 
+  ![](images/image20.png)
+
 Likewise, you may also specify the destination port that the subnet <code>203.0.113.0/24</code> is allowed to connect to. Again, we’ll use port <code>22</code> (SSH) as an example:
 - <code>sudo ufw allow from 203.0.113.0/24 to any port 22</code>
 
-  ![](images/image20.png)
+  ![](images/image21.png)
 
 ### Connections to a Specific Network Interface
 If you want to create a firewall rule that only applies to a specific network interface, you can do so by specifying “allow in on” followed by the name of the network interface.
@@ -176,21 +178,21 @@ If you want to create a firewall rule that only applies to a specific network in
 You may want to look up your network interfaces before continuing. To do so, use this command:
 - <code>ip addr</code>
 
-  ![](images/image21.png)
+  ![](images/image22.png)
 
 he highlighted output indicates the network interface names. They are typically named something like <code>eth0</code> or <cdoe>enp3s2</code>.
 
 So, if your server has a public network interface called <code>eth0</code>, you could allow HTTP traffic (port <code>80</code>) to it with this command:
 - <code>sudo ufw allow in on eth0 to any port 80</code>
 
-  ![](images/image22.png)
+  ![](images/image23.png)
 
 Doing so would allow your server to receive HTTP requests from the public internet.
 
 Or, if you want your [MySQL](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04) database server (port <code>3306</code>) to listen for connections on the private network interface <code>eth1</code>, for example, you could use this command:
 - <code>sudo ufw allow in on eth1 to any port 3306</code>
 
-  ![](images/image23.png)
+  ![](images/image24.png)
 
 This would allow other servers on your private network to connect to your MySQL database.
 
