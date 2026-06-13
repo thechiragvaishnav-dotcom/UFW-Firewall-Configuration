@@ -365,7 +365,7 @@ By default, UFW is configured to apply rules to both IPv4 and IPv6. You can veri
 
   ![](images/image42.png)
 
-When you add a rule like sudo ufw allow http, UFW creates a rule for both protocols. You can see this in the status output:
+When you add a rule like <code>sudo ufw allow http</code>, UFW creates a rule for both protocols. You can see this in the status output:
 
 ![](images/image43.png)
 
