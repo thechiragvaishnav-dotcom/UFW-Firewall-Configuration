@@ -323,12 +323,12 @@ Server requirements change over time. Services are added, removed, or reconfigur
    - <code>sudo ufw status numbered</code>
 
      ![](images/image39.png)
-2. Evaluate Each Rule: For every rule in the list, ask the following questions:
-  - Is the service associated with this port still running and in use?
-  - Is the level of access (e.g., from <code>Anywhere</code> vs. a specific IP) still appropriate?
-  - Could this rule be made more restrictive without breaking functionality?
+2. **Evaluate Each Rule:** For every rule in the list, ask the following questions:
+   - Is the service associated with this port still running and in use?
+   - Is the level of access (e.g., from <code>Anywhere</code> vs. a specific IP) still appropriate?
+   - Could this rule be made more restrictive without breaking functionality?
 3. **Remove Unnecessary Rules:** If a rule is no longer needed, delete it. For instance, if you no longer need FTP access, which was rule number <code>[5]</code> in your list:
-  - <code>sudo ufw delete 5</code>
+   - <code>sudo ufw delete 5</code>
 
     ![](images/image40.png)
 
