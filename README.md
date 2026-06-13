@@ -415,4 +415,5 @@ Applying an incorrect firewall rule can cause a service outage or lock you out o
   - This command checks the state of ports 22, 80, and 443 from an external machine
     - <code>nmap -p 22,80,443 your_server_ip</code>
 
+      ![](images/image49.png)
 The output should show <code>open</code> for allowed ports and <code>closed</code> or <code>filtered</code> for blocked ports, matching your expectations.
