@@ -389,16 +389,16 @@ This approach can prevent a compromised server from communicating with an attack
 
        ![](images/image45.png)
 
-  - Allow access to package repositories and web APIs
-    - <code>sudo ufw allow out to any port 80 proto tcp
+   - Allow access to package repositories and web APIs
+     - <code>sudo ufw allow out to any port 80 proto tcp
 sudo ufw allow out to any port 443 proto tcp</code>
 
 
-      ![](images/image46.png)
-  - Allow NTP for time synchronization
-    - <code>sudo ufw allow out 123/udp</code>
+       ![](images/image46.png)
+   - Allow NTP for time synchronization
+     - <code>sudo ufw allow out 123/udp</code>
 
-      ![](images/image47.png)
+       ![](images/image47.png)
 
 You must tailor these rules to the specific needs of your server’s applications.
 
