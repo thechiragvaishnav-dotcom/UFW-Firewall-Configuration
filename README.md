@@ -417,3 +417,5 @@ Applying an incorrect firewall rule can cause a service outage or lock you out o
 
       ![](images/image49.png)
 The output should show <code>open</code> for allowed ports and <code>closed</code> or <code>filtered</code> for blocked ports, matching your expectations.
+
+## [Back to Content](https://github.com/thechiragvaishnav-dotcom/UFW-Firewall-Configuration/blob/main/README.md#content)
